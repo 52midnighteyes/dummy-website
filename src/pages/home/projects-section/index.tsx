@@ -13,7 +13,7 @@ export default function ProjectsSection() {
       <div className="flex flex-col items-center gap-10">
         <h1 className="text-[60px] font-bold">Shipped Products</h1>
         {/* card */}
-        <div className="flex h-146 w-324 items-end bg-[url('american_sauls.png')] bg-cover p-6 drop-shadow-2xl">
+        <div className="flex h-146 w-324 items-end bg-[url('/american_sauls.png')] bg-cover p-6 drop-shadow-2xl">
           <div className="flex h-3/5 w-100 flex-col items-start justify-center gap-2 bg-black p-6">
             <h2 className="text-2xl font-semibold text-yellow-400">
               Hypothetical Law Firm Website
@@ -76,7 +76,7 @@ export default function ProjectsSection() {
         </div>
 
         {/* card2 */}
-        <div className="flex h-146 w-324 items-end bg-[url('nopaper.jpg')] bg-cover p-6 drop-shadow-2xl">
+        <div className="flex h-146 w-324 items-end bg-[url('/nopaper.jpg')] bg-cover p-6 drop-shadow-2xl">
           <div className="flex h-3/5 w-100 flex-col items-start justify-center gap-2 bg-black p-6">
             <h2 className="text-2xl font-semibold text-yellow-400">No Paper: A To-Do List App</h2>
 
