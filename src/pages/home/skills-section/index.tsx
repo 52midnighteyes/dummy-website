@@ -1,4 +1,4 @@
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 
 const skillData = [
   {
@@ -22,7 +22,10 @@ const skillData = [
 ];
 export default function SkillsSection() {
   return (
-    <section className="flex h-auto min-w-screen flex-col items-center justify-center gap-5 bg-black p-10 leading-relaxed text-white lg:px-50 lg:py-20">
+    <section
+      id="skill"
+      className="flex h-auto min-w-screen flex-col items-center justify-center gap-5 bg-black p-10 leading-relaxed text-white lg:px-50 lg:py-20"
+    >
       {/* content wrapper */}
       <div className="flex flex-col gap-15 lg:flex-row">
         {/* desc and head */}

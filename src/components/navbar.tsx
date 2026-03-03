@@ -1,49 +1,101 @@
-import { useEffect, useState } from "react";
-import { Button } from "./ui/button";
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
 
-const section = [
-  { title: "home" },
-  { title: "skill" },
-  { title: "porto" },
-  { title: "contact" },
-];
+export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
 
-export default function NavBar() {
-  const [scrolled, setScrolled] = useState<Boolean>(false);
-  useEffect(() => {
-    const onScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
+  const scrollToId = (id: string) => {
+    const el = document.getElementById(id);
+    if (!el) return;
 
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  });
+    const NAVBAR_OFFSET = 80;
+    const y = el.getBoundingClientRect().top + window.scrollY - NAVBAR_OFFSET;
+
+    window.scrollTo({ top: y, behavior: "smooth" });
+    setIsOpen(false);
+  };
+
   return (
-    <section
-      className={
-        "sticky top-0 z-50 flex inset-x-0 h-21 w-screen px-14 items-center text-[#0e0e0e] transition-colors duration-300 " +
-        (scrolled ? "bg-[#f5f5f5]" : "bg-transparent")
-      }
-    >
-      {/* conten wrapper */}
-      <div className="bg-red-400 h-11 flex justify-between items-center w-full">
-        {/* title */}
-        <div>SAUL "CODE" MAN</div>
-        <div className="flex justify-between w-80">
-          {section.map((a) => (
-            <div className=" flex leading-relaxed bg-orange-400 h-9 w-full items-center justify-center">
-              <p className="font-bold items-center justify-center flex">
-                {a.title.toUpperCase()}{" "}
-              </p>
-            </div>
-          ))}
+    <nav className="fixed top-0 z-50 w-full bg-black px-6 py-4 text-white shadow-sm">
+      <div className="mx-auto flex max-w-6xl items-center justify-between">
+        <button
+          type="button"
+          onClick={() => scrollToId("hero")}
+          className="text-left"
+          aria-label="Go to hero"
+        >
+          <h1 className="text-lg font-bold text-yellow-400">
+            Jimmy <span className="text-white">"Code"</span> McGill
+          </h1>
+        </button>
+
+        {/* Desktop */}
+        <div className="hidden space-x-6 text-sm font-medium md:flex">
+          <button
+            type="button"
+            onClick={() => scrollToId("aboutme")}
+            className="transition-colors duration-200 hover:text-yellow-400"
+          >
+            About Me
+          </button>
+          <button
+            type="button"
+            onClick={() => scrollToId("skill")}
+            className="transition-colors duration-200 hover:text-yellow-400"
+          >
+            Skills
+          </button>
+          <button
+            type="button"
+            onClick={() => scrollToId("contactme")}
+            className="transition-colors duration-200 hover:text-yellow-400"
+          >
+            Contact
+          </button>
         </div>
-        <div>
-          <Button className="text-[#f5f5f5] h-full w-25 rounded-none">
-            lets talk
-          </Button>
-        </div>
+
+        {/* Mobile toggle */}
+        <button
+          type="button"
+          className="md:hidden"
+          onClick={() => setIsOpen((v) => !v)}
+          aria-label={isOpen ? "Close menu" : "Open menu"}
+          aria-expanded={isOpen}
+        >
+          {isOpen ? (
+            <X className="h-6 w-6 text-yellow-400" />
+          ) : (
+            <Menu className="h-6 w-6 text-yellow-400" />
+          )}
+        </button>
       </div>
-    </section>
+
+      {/* Mobile menu */}
+      {isOpen && (
+        <div className="mt-4 space-y-4 text-center text-sm font-medium md:hidden">
+          <button
+            type="button"
+            onClick={() => scrollToId("aboutme")}
+            className="block w-full transition-colors duration-200 hover:text-yellow-400"
+          >
+            About Me
+          </button>
+          <button
+            type="button"
+            onClick={() => scrollToId("portfolio")}
+            className="block w-full transition-colors duration-200 hover:text-yellow-400"
+          >
+            Portfolio
+          </button>
+          <button
+            type="button"
+            onClick={() => scrollToId("contact")}
+            className="block w-full transition-colors duration-200 hover:text-yellow-400"
+          >
+            Contact
+          </button>
+        </div>
+      )}
+    </nav>
   );
 }

@@ -1,4 +1,5 @@
 import { Badge } from "@/components/ui/badge";
+import { Card } from "@/components/ui/card";
 
 const data = [
   { title: "Projects Finished", total: 2 },
@@ -6,11 +7,38 @@ const data = [
   { title: "Awards Won", total: 49 },
 ];
 
+const experiences = [
+  {
+    period: "2017 - 2018",
+    title: "Mail Boy",
+    company: "Hamlin, Hamlin & McGill",
+    description:
+      "Delivered mail, dodged lawsuits, and overheard enough legal drama to last a lifetime. Humble beginnings — but it sparked the hustle.",
+  },
+  {
+    period: "2018 - 2024",
+    title: "Criminal Lawyer",
+    company: "Self-Employed",
+    description:
+      "Represented clients in tough situations — from courtroom chaos to legal loopholes. Always had a way with words… and loopholes.",
+  },
+  {
+    period: "2025 - Present",
+    title: "Full-Stack Web Developer",
+    company: "Independent",
+    description:
+      "Now writing code instead of briefs. Building full-stack apps with React, Next.js, Node.js, and PostgreSQL — clean, sharp, and legally solid.",
+  },
+];
+
 const techStack: string[] = ["react", "express", "postgresql", "typescript", "nodeJs"];
 
 export default function AboutMeSection() {
   return (
-    <section className="flex min-h-dvh min-w-screen flex-col items-center justify-center gap-5 bg-[#1A1A1A] p-10 leading-relaxed text-white lg:px-50 lg:py-20">
+    <section
+      id="aboutme"
+      className="flex min-h-dvh min-w-screen flex-col items-center justify-center gap-5 bg-[#1A1A1A] p-10 leading-relaxed text-white lg:px-50 lg:py-20"
+    >
       {/* content wrapper */}
       <div className="flex h-full w-full flex-col items-center justify-center gap-15 lg:flex-row-reverse">
         {/* text */}
@@ -65,6 +93,22 @@ export default function AboutMeSection() {
         <div className="h-120 w-160 shrink-0 rounded-md shadow-2xl grayscale">
           <img src="aboutmejimmy.webp" alt="" className="h-full w-full rounded-md object-cover" />
         </div>
+      </div>
+      {/* experineces */}
+      <div className="flex w-full flex-col items-center justify-center gap-5 lg:flex-row">
+        {experiences.map((a) => (
+          <Card className="w-full max-w-xl border border-yellow-400/10 bg-black text-gray-200">
+            <div className="flex flex-col gap-2 p-6">
+              <p className="text-sm text-gray-400">{a.period}</p>
+
+              <h1 className="text-2xl font-bold text-yellow-400">{a.title}</h1>
+
+              <h2 className="text-sm font-semibold text-gray-200">{a.company}</h2>
+
+              <p className="text-sm leading-relaxed text-gray-200/90">{a.description}</p>
+            </div>
+          </Card>
+        ))}
       </div>
     </section>
   );
