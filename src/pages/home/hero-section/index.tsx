@@ -1,6 +1,16 @@
 import { Button } from "@/components/ui/button";
 import TitleAnimation from "./components/typewriter";
 
+const scrollToId = (id: string) => {
+  const el = document.getElementById(id);
+  if (!el) return;
+
+  const NAVBAR_OFFSET = 80;
+  const y = el.getBoundingClientRect().top + window.scrollY - NAVBAR_OFFSET;
+
+  window.scrollTo({ top: y, behavior: "smooth" });
+};
+
 export default function HeroSection() {
   return (
     <section
@@ -31,7 +41,10 @@ export default function HeroSection() {
           </blockquote>
           {/* button cta */}
           <div className="mt-4">
-            <Button className="bg-yellow-400 font-bold text-black hover:bg-gray-200 hover:text-black">
+            <Button
+              onClick={() => scrollToId("contactme")}
+              className="bg-yellow-400 font-bold text-black hover:bg-gray-200 hover:text-black"
+            >
               Contact Me!
             </Button>
           </div>
