@@ -47,6 +47,13 @@ export default function Navbar() {
           </button>
           <button
             type="button"
+            onClick={() => scrollToId("project")}
+            className="transition-colors duration-200 hover:text-yellow-400"
+          >
+            Projects
+          </button>
+          <button
+            type="button"
             onClick={() => scrollToId("contactme")}
             className="transition-colors duration-200 hover:text-yellow-400"
           >
@@ -82,14 +89,21 @@ export default function Navbar() {
           </button>
           <button
             type="button"
-            onClick={() => scrollToId("portfolio")}
+            onClick={() => scrollToId("skill")}
             className="block w-full transition-colors duration-200 hover:text-yellow-400"
           >
-            Portfolio
+            Skills
           </button>
           <button
             type="button"
-            onClick={() => scrollToId("contact")}
+            onClick={() => scrollToId("project")}
+            className="block w-full transition-colors duration-200 hover:text-yellow-400"
+          >
+            Projects
+          </button>
+          <button
+            type="button"
+            onClick={() => scrollToId("contactme")}
             className="block w-full transition-colors duration-200 hover:text-yellow-400"
           >
             Contact
