@@ -37,7 +37,7 @@ export default function AboutMeSection() {
   return (
     <section
       id="aboutme"
-      className="flex min-h-dvh min-w-screen flex-col items-center justify-center gap-5 bg-[#1A1A1A] p-10 leading-relaxed text-white lg:px-50 lg:py-20"
+      className="flex min-h-dvh w-full flex-col items-center justify-center gap-5 bg-[#1A1A1A] p-10 leading-relaxed text-white lg:px-50 lg:py-20"
     >
       {/* content wrapper */}
       <div className="flex h-full w-full flex-col items-center justify-center gap-15 lg:flex-row-reverse">

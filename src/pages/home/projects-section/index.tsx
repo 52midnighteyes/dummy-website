@@ -6,7 +6,7 @@ export default function ProjectsSection() {
   return (
     <section
       id="project"
-      className="flex h-auto min-w-screen flex-col items-center justify-start gap-5 bg-[#1A1A1A] p-10 leading-relaxed text-white lg:px-50 lg:py-20"
+      className="flex h-auto w-full flex-col items-center justify-start gap-5 bg-[#1A1A1A] p-10 leading-relaxed text-white lg:px-50 lg:py-20"
     >
       {/* content wrapper */}
 

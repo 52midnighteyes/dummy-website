@@ -15,7 +15,7 @@ export default function HeroSection() {
   return (
     <section
       id="hero"
-      className="flex min-h-screen min-w-screen items-center justify-center bg-black p-10 leading-relaxed text-white lg:px-50 lg:py-20"
+      className="flex min-h-screen w-full items-center justify-center bg-black p-10 leading-relaxed text-white lg:px-50 lg:py-20"
     >
       {/* content wrapper */}
       <div className="flex w-full flex-col items-center justify-center gap-15 lg:flex-row">

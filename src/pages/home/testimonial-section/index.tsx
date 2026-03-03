@@ -31,7 +31,7 @@ export default function TestimonialSection() {
   return (
     <section
       id="testi"
-      className="flex min-h-screen min-w-screen flex-col items-center justify-center gap-5 bg-black p-10 leading-relaxed text-white lg:px-50 lg:py-20"
+      className="flex min-h-screen w-full flex-col items-center justify-center gap-5 bg-black p-10 leading-relaxed text-white lg:px-50 lg:py-20"
     >
       {/* content wrapper */}
       <h1 className="text-[60px] font-bold">Don’t Take My Word For It</h1>

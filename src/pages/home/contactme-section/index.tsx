@@ -6,7 +6,7 @@ export default function ContactMe() {
   return (
     <section
       id="contactme"
-      className="h-au flex min-w-screen flex-col items-center justify-center gap-5 bg-[#1A1A1A] p-10 leading-relaxed text-white lg:px-50 lg:py-20"
+      className="flex h-auto w-full flex-col items-center justify-center gap-5 bg-[#1A1A1A] p-10 leading-relaxed text-white lg:px-50 lg:py-20"
     >
       <div className="w-full max-w-xl space-y-10">
         <div className="space-y-2 text-center">
